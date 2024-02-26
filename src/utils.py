@@ -1,6 +1,5 @@
 import os 
 import PyPDF2
-import json
 import traceback
 
 from dotenv import load_dotenv
