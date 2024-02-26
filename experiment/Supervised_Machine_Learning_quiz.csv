@@ -1,0 +1,6 @@
+Question,Options A,Options B,Options C,Options D,Correct Answer
+What is Supervised Machine Learning?,A type of machine learning where the model learns from labeled data,A type of machine learning where the model learns from unlabeled data,A type of machine learning where the model does not require any data,A type of machine learning where the model learns from reinforcement,a
+What is the goal of Supervised Machine Learning?,To predict future outcomes based on historical data,To classify data into different categories,To optimize a function,To learn patterns from unstructured data,a
+Which of the following is an example of Supervised Machine Learning algorithm?,K-means clustering,Random Forest,Principal Component Analysis,Apriori algorithm,b
+What is the process of Supervised Machine Learning?,"Feature selection, data preprocessing, model training, model evaluation","Model evaluation, feature selection, data preprocessing, model training","Data preprocessing, model evaluation, feature selection, model training","Model training, model evaluation, feature selection, data preprocessing",a
+Which evaluation metric is commonly used in Supervised Machine Learning for classification problems?,Mean Squared Error (MSE),Accuracy,R-squared,Mean Absolute Error (MAE),b

@@ -1,4 +1,4 @@
-Steps:
+## Steps:
 
 1) Create a new env 
     - conda create -p venv python==3.10 -y
@@ -14,6 +14,7 @@ Steps:
     - setup.py
     - requirements.txt
     - README.md
+    - .env
  
 Here is the explanation for each file
 
@@ -40,4 +41,28 @@ Let's break down each file and its purpose in the project architecture:
 5. **README.md**:
     - This file contains information about your project, including what it does, how to install it, how to use it, and any other relevant details. It serves as documentation for your project and helps users and developers understand it better.
 
+6. 5. **.env**:
+    - In this file we store our variable in the system and can keep them hidden. Also, it helps to transport the file to other people and help them to access the values of variables stored in the system.
+
 Each of these files serves a specific purpose in organizing, documenting, and managing your project, which is crucial for effective software development and collaboration.
+
+3) Write all the important packages in the requirements.txt
+    - **Important** = Write "- e." in requirements file
+
+In a `requirements.txt` file, the `-e` flag is used to specify that you want to install a package in "editable" mode. This mode is often used during development when you're actively working on a package and want changes to be immediately reflected without having to reinstall the package each time.
+
+Here's what the `-e` flag does:
+
+- **Editable mode (`-e`)**: When you specify a package with the `-e` flag in the `requirements.txt` file, it means that you want to install the package in editable mode. In editable mode, instead of copying the package's files into the Python environment's site-packages directory, a symbolic link (or symlink) is created instead. This symlink points directly to the source code directory of the package. As a result, any changes made to the source code are immediately reflected when you import the package in your code, without needing to reinstall the package.
+
+For example, let's say you have a package named `mypackage`, and you want to install it in editable mode using `requirements.txt`. You would write it like this:
+
+```
+-e ./path/to/mypackage
+```
+
+This tells `pip` to install `mypackage` from the specified path in editable mode.
+
+Using editable mode can be convenient during development because it allows you to make changes to your package's source code and immediately see the effects without needing to reinstall the package each time. However, it's important to note that this mode is primarily intended for development purposes and shouldn't be used in production environments.
+
+4) Write setup.py file
