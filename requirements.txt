@@ -4,6 +4,7 @@ langchain-openai
 python-dotenv
 pandas
 PyPDF2
+datetime
 streamlit
 
 -e .
