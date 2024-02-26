@@ -2,12 +2,13 @@ from langchain_openai import ChatOpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain, SequentialChain
 from langchain_community.callbacks import get_openai_callback
-from src.utils import OPENAI_API_KEY
-import pandas as pd
+from src.utils import get_openai_api_key, get_table_data
 import json
 
+OpenAI_API_key = get_openai_api_key()
+
 #Initialise the LLM Model
-llm_OpenAI = ChatOpenAI(model = 'gpt-3.5-turbo', temperature = 0)
+llm_OpenAI = ChatOpenAI(model = 'gpt-3.5-turbo', temperature = 0, api_key = OpenAI_API_key)
 
 # Read the Json file
 with open("i:\8_end_to_end_projects\Project_2\MCQ_Generator\Response.json", 'r') as f:
@@ -51,7 +52,7 @@ Check from an expert English Writer of the above quiz:
 """
 # Creating the Prompt Template for MCQ Generator reviewer
 quiz_verification_prompt = PromptTemplate(
-    input_variables=["subject", "quiz", "tone"],
+    input_variables=["topic", "quiz", "tone"],
     template=verification_template
     )
 
@@ -60,20 +61,3 @@ quiz_verification_chain = LLMChain(llm=llm_OpenAI, prompt = quiz_verification_pr
 
 # Creating the Sequential chain to automate the process of MCQ generation and Reviewer feedback
 overall_chain = SequentialChain(chains = [quiz_generation_chain, quiz_verification_chain], input_variables=["topic", "number", "tone", "response_json"], output_variables= ['quiz', 'review'])
-
-# Intialising the overall chain to get the output
-with get_openai_callback() as cb:
-    Final_output=overall_chain(
-        {'topic':'Supervised Machine Learning', 
-        'number': 5, 
-        'subject' : 'Machine learning', 
-        'tone' :'academic',
-        'response_json' : json.dumps(Response_JSON)}
-        )
-    
-print(f"Total Tokens:{cb.total_tokens}")
-print(f"Prompt Tokens:{cb.prompt_tokens}")
-print(f"Completion Tokens:{cb.completion_tokens}")
-print(f"Total Cost:{cb.total_cost}")
-print('\n******************************************\n')
-print(Final_output)
