@@ -1,16 +1,22 @@
 import os 
-import PyPDF2
 import traceback
 
 from dotenv import load_dotenv
 
-load_dotenv()
+def get_openai_api_key():
+    load_dotenv()
+    key = os.getenv("OPENAI_API_KEY")
+    return key
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+def get_table_data(quiz_dict):
+    quiz_table_data = []
+    for key, value in quiz_dict.items():
+        mcq = value['mcq']
+        option_a = value['options']['a']
+        option_b = value['options']['b']
+        option_c = value['options']['c']
+        option_d = value['options']['d']
+        correct = value['Correct']
+        quiz_table_data.append({'Question': mcq, "Options A": option_a, "Options B": option_b, "Options C": option_c, "Options D": option_d, "Correct Answer": correct})
 
-def read_file():
-    pass
-
-def get_table_data():
-    pass
-
+    return quiz_table_data
