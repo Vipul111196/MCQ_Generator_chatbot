@@ -6,31 +6,31 @@ This project utilizes the OpenAI API with the LLM model GPT4 and Langchain to ge
 
 To clone the repository, use the following command:
 
-git clone https://github.com/Vipul111196/MCQ_Generator_chatbot.git
+```git clone https://github.com/Vipul111196/MCQ_Generator_chatbot.git```
 
 ## Usage
 
 1. Navigate to the project directory:
 
-cd MCQ_Generator_chatbot
+```cd MCQ_Generator_chatbot```
 
 2. Set up a new environment (optional but recommended):
 
-conda create -p venv python -y
+```conda create -p venv python -y```
 
 3. Install dependencies using pip:
 
-pip install -r requirements.txt
+```pip install -r requirements.txt```
 
 4. Activate the environment (if created):
 
-conda activate venv\   # for Windows
+```conda activate venv\```   # for Windows
 
 5. Run the Streamlit app:
 
-streamlit run streamlit_app.py
+```streamlit run streamlit_app.py```
 
-6. Access the Streamlit app in your web browser at [http://localhost:8501](http://localhost:8501).
+6. Access the Streamlit app in your web browser at ```[http://localhost:8501](http://localhost:8501).```
 
 7. Enter the desired topic, number of questions, and complexity level.
 
