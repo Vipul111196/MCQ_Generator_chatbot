@@ -6,21 +6,21 @@ This project utilizes the OpenAI API with the LLM model GPT4 and Langchain to ge
 
 To clone the repository, use the following command:
 
-git clone https://github.com/Vipul111196/mcq-generator.git
+git clone https://github.com/Vipul111196/MCQ_Generator_chatbot.git
 
 ## Usage
 
 1. Navigate to the project directory:
 
-cd mcq-generator
+cd MCQ_Generator_chatbot
 
-2. Install dependencies using pip:
-
-pip install -r requirements.txt
-
-3. Set up a new environment (optional but recommended):
+2. Set up a new environment (optional but recommended):
 
 conda create -p venv python -y
+
+3. Install dependencies using pip:
+
+pip install -r requirements.txt
 
 4. Activate the environment (if created):
 
@@ -46,6 +46,8 @@ Ensure you have Python, Anaconda package and pip installed on your system. The p
 
 ## Notes
 
-- Make sure to replace `yourusername` in the clone command with your actual GitHub username.
-- You may need to sign up for an OpenAI API key and configure it within the `mcq_generator.py` file.
+- You may need to sign up for an OpenAI API key and configure it within the `streamlit_app.py` file.
 - This project is for educational and informational purposes only.
+- If you want to collaborate and want to modify the project, please create a pull request. 
+
+### Thank you for visiting the profile.
