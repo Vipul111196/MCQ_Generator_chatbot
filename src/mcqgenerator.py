@@ -25,13 +25,13 @@ main_template="""
     Ensure to make {number} MCQs
 
     ### RESPONSE_JSON
-    {response_json}
+    {Response_JSON}
 
 """
 
 # Creating the Prompt Template for MCQ Generator
 quiz_generation_prompt = PromptTemplate(
-    input_variables = ['topic', 'number', 'tone', 'response_json'],
+    input_variables = ['topic', 'number', 'tone', 'Response_JSON'],
     template = main_template
 )
 
@@ -60,4 +60,4 @@ quiz_verification_prompt = PromptTemplate(
 quiz_verification_chain = LLMChain(llm=llm_OpenAI, prompt = quiz_verification_prompt, output_key= "review")
 
 # Creating the Sequential chain to automate the process of MCQ generation and Reviewer feedback
-overall_chain = SequentialChain(chains = [quiz_generation_chain, quiz_verification_chain], input_variables=["topic", "number", "tone", "response_json"], output_variables= ['quiz', 'review'])
+overall_chain = SequentialChain(chains = [quiz_generation_chain, quiz_verification_chain], input_variables=["topic", "number", "tone", "Response_JSON"], output_variables= ['quiz', 'review'])
